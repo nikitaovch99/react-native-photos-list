@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
 const PhotoName = styled.Text`
@@ -37,12 +37,12 @@ type Props = {
 }
 
 export const Photo = ({ photo, title, author }: Props) => {
-  return(
+  return (
     <PhotoView>
-      <PhotoImage source={{uri: photo}}/>
+      <PhotoImage source={{ uri: photo }} />
       <PhotoDetails>
-      <PhotoName>{title? title : 'no title'}</PhotoName>
-      <PhotoAuthor>{`Made by: ${author}`}</PhotoAuthor>
+        <PhotoName>{title ?? 'no title'}</PhotoName>
+        <PhotoAuthor>{`Made by: ${author}`}</PhotoAuthor>
       </PhotoDetails>
     </PhotoView>
   )

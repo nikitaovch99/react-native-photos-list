@@ -1,5 +1,5 @@
 import { View, Text, FlatList, TouchableOpacity, StatusBar } from "react-native";
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import { Photo } from './Photo';
 import { Loading } from "./Loading";
 import { useAppDispatch, useAppSelector } from "../features/hooks";
@@ -13,14 +13,14 @@ type Props = NativeStackScreenProps<RootStackParamList, "PhotoList">;
 export const PhotoList = ({ navigation }: Props) => {
   const dispatch = useAppDispatch();
 
-  const {data, loading, error } = useAppSelector((state) => state.photos);
+  const { data, loading, error } = useAppSelector((state) => state.photos);
 
   return loading ? (
     <Loading />
   ) : (
     <>
       <View>
-        <StatusBar></StatusBar>
+        <StatusBar />
         <FlatList
           data={data}
           renderItem={({ item }) => (
@@ -38,7 +38,7 @@ export const PhotoList = ({ navigation }: Props) => {
       </View>
       <Snackbar
         visible={error}
-        onDismiss={() => {}}
+        onDismiss={() => { return }}
         action={{
           label: "Try again",
           onPress: () => {

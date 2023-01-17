@@ -49,8 +49,8 @@ export type Photo = {
   likes: number;
   links: Links;
   promoted_at: string | null;
-  sponsorship: Object;
-  topic_submissions: Object;
+  sponsorship: object;
+  topic_submissions: object;
   updated_at: string;
   urls: Urls;
   user: User;

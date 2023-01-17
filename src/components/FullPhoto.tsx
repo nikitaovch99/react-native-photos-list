@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
+import React from 'react';
 
-  const PhotoImage = styled.Image`
+const PhotoImage = styled.Image`
     height: 100%;
     width: 100%;
   `;
@@ -13,6 +14,6 @@ type Nav = NativeStackScreenProps<RootStackParamList, "FullPhoto">;
 export const FullPhoto = ({ route }: Nav) => {
   const { image } = route.params;
   return (
-      <PhotoImage source={{ uri: image.urls.full }}></PhotoImage>
+    <PhotoImage source={{ uri: image.urls.full }}></PhotoImage>
   );
 };
